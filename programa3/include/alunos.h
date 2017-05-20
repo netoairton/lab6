@@ -25,7 +25,7 @@ class Listaalunos {
         ~Listaalunos();
         int vazia();
         void Inserir(string Arquivo, int contador);
-        //void Exibe();
+        void Exibe();
 };
 
 
@@ -90,7 +90,31 @@ void Listaalunos<T>::Inserir(string Arquivo, int contador){
 			novo->prox=NULL;
 		    tmp->prox = novo;
         }
-        entrada.close();
     }
+    entrada.close();
+}
+template<typename T>
+void Listaalunos<T>::Exibe(){
+    if(vazia()){
+        cout << "Lista vazia!"<<endl
+							  <<endl;
+        return;
+    }
+
+    Listaalunos *tmp;
+	tmp = prox;
+    int ii=0;
+
+	while( tmp != NULL){
+        ii++;
+        cout<<"______________________________"<<endl
+            <<"Aluno  "<<ii<<endl
+		    <<"Matricula : "<< tmp->matricula <<endl
+            <<"Nome : "<<tmp->nome <<endl
+            <<"Faltas : "<<tmp->faltas <<endl
+            <<"Nota : "<<tmp->nota <<endl;
+		tmp = tmp->prox;
+	}
+	cout << endl;
 }
 #endif

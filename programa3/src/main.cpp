@@ -27,6 +27,10 @@ int main(){
         cin>>arquivo[i];
         total[i]= aberturaturma(arquivo[i]);
         lista.Inserir(arquivo[i], total[i]);
+        cout<<endl
+            <<"Alunos da turma  "<<i+1<<" :"<<endl
+            <<endl;
+        lista.Exibe();
     }
     return 0;
 }
