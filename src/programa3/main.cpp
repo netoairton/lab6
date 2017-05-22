@@ -1,3 +1,11 @@
+/**
+ * @file	main.cpp
+ * @brief	Implementacao do main
+ * @author	Airton Neto(netoairton@yahoo.com.br)
+ * @since	20/05/2017
+ * @date	21/05/2017
+ * @sa		lista.h
+ */
 #include<iostream>
 using std::cout;
 using std::cin;
@@ -9,7 +17,6 @@ using std::string;
 #include"alunos.h"
 
 int main(){
-    //Listaalunos<float> lista;
     int quantidade, opcao=0;
     cout<<"***** Listagem de alunos em turmas *****"<<endl
         <<endl
@@ -19,15 +26,15 @@ int main(){
     if(quantidade==0){
         return 0;
     }
-    Listaalunos<float> *lista= new Listaalunos<float>[quantidade];
-    string *arquivo= new string[quantidade];
-    int *total= new int[quantidade];
+    Listaalunos<float> *lista= new Listaalunos<float>[quantidade];//Define um vetor de listas, uma lista por turma
+    string *arquivo= new string[quantidade]; //vetor de strings com os nomes dos arquivos
+    int *total= new int[quantidade]; //total de alunos em cada turma
 
     for(int i=0; i<quantidade; i++){
         cout<<"Digite o caminho do arquivo: ";
         cin>>arquivo[i];
-        total[i]= aberturaturma(arquivo[i]);
-        lista[i].Inserir(arquivo[i], total[i]);
+        total[i]= aberturaturma(arquivo[i]); //checa a quantidade de alunos
+        lista[i].Inserir(arquivo[i], total[i]);//Insere os alunos
         cout<<endl
             <<"Deseja Imprimir os alunos dessa turma (1)Sim (0)Nao : ";
         cin>>opcao;
@@ -38,8 +45,8 @@ int main(){
             lista[i].Exibe();
         }
     }
-    //vetor que recebe as medias de cada turma, para depois imprimir/salvar
-    float *media= new float[quantidade];
+    
+    float *media= new float[quantidade];//vetor que recebe as medias de cada turma, para depois imprimir/salvar
     for(int jj=0; jj<quantidade; jj++){
         cout<<"Calculando as medias: "<<jj+1<<"/"<<quantidade<<" turmas calculadas"<<endl;
         media[jj]=lista[jj].Media();

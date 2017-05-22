@@ -1,3 +1,11 @@
+/**
+ * @file	main.cpp
+ * @brief	Implementacao do main
+ * @author	Airton Neto(netoairton@yahoo.com.br)
+ * @since	12/05/2017
+ * @date	18/05/2017
+ * @sa		lista.h
+ */
 #include<iostream>
 using std::cout;
 using std::cin;
@@ -27,13 +35,12 @@ int main(){
             }
             for(int i=0; i<quantidade; i++){
                 cout<<"Digite o valor a ser inserido (-1 para sair): ";
-                cin>>elemento;
+                cin>>elemento; //Pede cada elemento a ser adicionado
                 if(elemento== -1){
                     lista.Exibe();
                     return 0;
                 }
-                lista.Inserir(elemento);
-            //lista.Exibe();
+                lista.Inserir(elemento);//Insere na lista
             }
             cout<<                                endl
                 <<"Todos os Elementos inseridos"<<endl

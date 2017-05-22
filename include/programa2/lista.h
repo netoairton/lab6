@@ -1,3 +1,10 @@
+/**
+ * @file	openarquivo.cpp
+ * @brief	Declaracao da classe Lista e seus metodos
+ * @author	Airton Neto(netoairton@yahoo.com.br)
+ * @since	12/05/2017
+ * @date	18/05/2017
+ */
 #ifndef LISTA_H
 #define LISTA_H
 

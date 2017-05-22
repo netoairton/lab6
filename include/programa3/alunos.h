@@ -1,3 +1,10 @@
+/**
+ * @file	openarquivo.cpp
+ * @brief	Declaracao da classe Listaalunos e seus metodos
+ * @author	Airton Neto(netoairton@yahoo.com.br)
+ * @since	20/05/2017
+ * @date	21/05/2017
+ */
 #ifndef ALUNOS_H
 #define ALUNOS_H
 
@@ -145,7 +152,7 @@ template<typename T>
 void Listaalunos<T>::Salva(){
     ifstream teste("./data/arquivo.csv");
     string check;
-    getline(teste, check);
+    getline(teste, check);//checa se o arquivo está vazio
     teste.close();
 
     ofstream salvar("./data/arquivo.csv", ios::app);
@@ -167,7 +174,7 @@ void Listaalunos<T>::Salva(){
 	    }
     }
     else{
-        salvar<<"Matricula;Nome;Faltas;Nota"
+        salvar<<"Matricula;Nome;Faltas;Nota"//adiciona cabeçalho se o arquivo estiver vazio
         <<endl;
         while( tmp != NULL){
             ii++;
