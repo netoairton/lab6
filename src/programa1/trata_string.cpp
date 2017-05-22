@@ -8,7 +8,7 @@
  * @author	Silvio Sampaio (silviocs@imd.ufrn.br)
  * @since	18/03/2017
  * @date	18/03/2017
- * @sa		tratastring.h
+ * @sa		trata_string.h
  */
 
 #include <cctype>
@@ -23,7 +23,7 @@ using std::endl;
 #include <string>
 using std::string;
 
-#include "trata_string.h"
+#include "include/programa1/trata_string.h"
 
 
 /**

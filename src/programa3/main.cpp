@@ -13,8 +13,8 @@ using std::endl;
 #include<string>
 using std::string;
 
-#include"openarquivo.h"
-#include"alunos.h"
+#include"include/programa3/openarquivo.h"
+#include"include/programa3/alunos.h"
 
 int main(){
     int quantidade, opcao=0;

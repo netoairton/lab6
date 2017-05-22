@@ -79,7 +79,7 @@ $(OBJ_DIR)/programa1/trata_string.o: $(SRC_DIR)/programa1/trata_string.cpp $(INC
 
 # Define os arquivos src/programa1/main.cpp e os arquivos de cabecalho como dependencias.
 
-$(OBJ_DIR)/programa1/main.o: $(SRC_DIR)/programa1/main.cpp $(INC_DIR)/programa1/trata_string.h $(INC_DIR)/programa1/pilha.h
+$(OBJ_DIR)/programa1/main.o: $(SRC_DIR)/programa1/main.cpp $(INC_DIR)/programa1/pilha.h  $(INC_DIR)/programa1/trata_string.h
 
 	$(CC) -c $(CFLAGS) -o $@ $<
 

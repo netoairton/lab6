@@ -13,7 +13,7 @@ using std::endl;
 #include<string>
 using std::string;
 
-#include"lista.h"
+#include"include/programa2/lista.h"
 
 int main(){
     Lista<int> lista;

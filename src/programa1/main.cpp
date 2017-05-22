@@ -4,8 +4,8 @@
  * @author	Airton Neto(netoairton@yahoo.com.br)
  * @since	09/05/2017
  * @date	14/05/2017
+ * @sa		trata_string.h
  * @sa		pilha.h
- * @sa		tratastring.h
  */
 #include<iostream>
 using std::cout;
@@ -17,8 +17,8 @@ using std::string;
 
 #include<algorithm>
 
-#include"pilha.h"
-#include "trata_string.h"
+#include"include/programa1/pilha.h"
+#include "include/programa1/trata_string.h"
 
 int main(){
     string p1;
