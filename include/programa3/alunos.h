@@ -4,6 +4,7 @@
 #include<iostream>
 using std::cout;
 using std::endl;
+using std::ios;
 #include<string>
 using std::string;
 #include<fstream>
@@ -25,7 +26,9 @@ class Listaalunos {
         ~Listaalunos();
         int vazia();
         void Inserir(string Arquivo, int contador);
+        T Media();
         void Exibe();
+        void Salva();
 };
 
 
@@ -94,6 +97,27 @@ void Listaalunos<T>::Inserir(string Arquivo, int contador){
     entrada.close();
 }
 template<typename T>
+T Listaalunos<T>::Media(){
+    if(vazia()){
+        cout << "Lista vazia!"<<endl
+							  <<endl;
+        return 0;
+    }
+    Listaalunos *tmp;
+	tmp = prox;
+    int ii=0;
+    T media=0;
+
+	while( tmp != NULL){
+        ii++;
+        media=media+ tmp->nota;
+		tmp = tmp->prox;
+	}
+    media=media/ii;
+    return media;
+}
+
+template<typename T>
 void Listaalunos<T>::Exibe(){
     if(vazia()){
         cout << "Lista vazia!"<<endl
@@ -116,5 +140,44 @@ void Listaalunos<T>::Exibe(){
 		tmp = tmp->prox;
 	}
 	cout << endl;
+}
+template<typename T>
+void Listaalunos<T>::Salva(){
+    ifstream teste("./data/arquivo.csv");
+    string check;
+    getline(teste, check);
+    teste.close();
+
+    ofstream salvar("./data/arquivo.csv", ios::app);
+    if(!salvar){
+        cout<<"O arquivo de entrada nao pode ser aberto."<<endl;
+        return;
+    }
+    Listaalunos *tmp;
+	tmp = prox;
+    int ii=0;
+    if(teste){
+        while( tmp != NULL){
+            ii++;
+            salvar<<tmp->matricula <<";"
+                <<tmp->nome <<";"
+                <<tmp->faltas <<";"
+                <<tmp->nota <<endl;
+		    tmp = tmp->prox;
+	    }
+    }
+    else{
+        salvar<<"Matricula;Nome;Faltas;Nota"
+        <<endl;
+        while( tmp != NULL){
+            ii++;
+            salvar<<tmp->matricula <<";"
+                <<tmp->nome <<";"
+                <<tmp->faltas <<";"
+                <<tmp->nota <<endl;
+		    tmp = tmp->prox;
+	    }
+    }
+    salvar.close();
 }
 #endif

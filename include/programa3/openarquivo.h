@@ -1,6 +1,7 @@
 #ifndef OPENFILE1_H
 #define OPENFILE1_H
 
+#include"alunos.h"
 #include<fstream>
 using std::ifstream;
 using std::ofstream;
@@ -8,4 +9,5 @@ using std::ofstream;
 using std::string;
 
 int aberturaturma(string Arquivo);
+//void salvarturma(Listaalunos<float> *lista, int quantidade);
 #endif
