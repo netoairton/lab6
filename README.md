@@ -1,4 +1,4 @@
-# lab6
+﻿# lab6
 # by: Airton Correia de Oliveira Neto © ™
 #
 # Implementação dos 3 programas do LABORATÓRIO 6
@@ -13,3 +13,6 @@
 
 # IMPORTANTE:
 # Fazer as alterações necessárias no Makefile de acordo com o Sistema Operacional utilizado!
+
+# Utilizado arquivo de uma sugestão de resposta que
+está no sigaa, feito pelos professores.
